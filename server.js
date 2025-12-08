@@ -8,7 +8,7 @@ const app = express();
 
 // --- CONFIGURATION ---
 const port = process.env.PORT || 3000;
-const uri = "mongodb+srv://admin:zjaiwZ5m3ev4a7O2@cluster0.vvtvmol.mongodb.net/?appName=Cluster0"; 
+const uri = "mongodb+srv://admin:zjaiwZ5m3ev4a7O2@cluster0.5jms34j.mongodb.net/?appName=Cluster0"; 
 
 // --- MIDDLEWARE ---
 
