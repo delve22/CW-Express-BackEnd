@@ -18,6 +18,16 @@ app.use(cors());
 // 2. Body Parser (To read JSON data from POST requests)
 app.use(express.json());
 
+// Add CSP Middleware for safety and to allow favicon loading
+app.use((req, res, next) => {
+    // This allows images (like favicon) and styles from the same origin ('self')
+    // and explicitly blocks scripts ('none') since this is just an API.
+    res.setHeader(
+        'Content-Security-Policy',
+        "default-src 'none'; img-src 'self' https://cw-express-backend.onrender.com; style-src 'self'; connect-src 'self' https://cw-express-backend.onrender.com"
+    );
+    next();
+});
 // 3. Logger Middleware (Requirement: Middleware A)
 // Outputs all requests to the server console
 app.use((req, res, next) => {
